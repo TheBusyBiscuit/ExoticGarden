@@ -309,7 +309,7 @@ public class PlantsListener implements Listener {
                 if (!ExoticGarden.getGrassDrops().keySet().isEmpty() && e.getPlayer().getGameMode() != GameMode.CREATIVE) {
                     Random random = ThreadLocalRandom.current();
 
-                    if (random.nextInt(100) < 6) {
+                    if (random.nextInt(100) < cfg.getInt("chances.SEEDSDROP")) {
                         ItemStack[] items = ExoticGarden.getGrassDrops().values().toArray(new ItemStack[0]);
                         e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), items[random.nextInt(items.length)]);
                     }

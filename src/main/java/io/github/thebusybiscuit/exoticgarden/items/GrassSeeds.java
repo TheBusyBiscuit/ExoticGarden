@@ -15,6 +15,7 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.exoticgarden.ExoticGarden;
 
 public class GrassSeeds extends SimpleSlimefunItem<ItemUseHandler> {
 
@@ -37,10 +38,10 @@ public class GrassSeeds extends SimpleSlimefunItem<ItemUseHandler> {
                     b.setType(Material.GRASS_BLOCK);
 
                     if (b.getRelative(BlockFace.UP).getType() == Material.AIR) {
-                        b.getRelative(BlockFace.UP).setType(Material.GRASS);
+                        b.getRelative(BlockFace.UP).setType(ExoticGarden.grass);
                     }
 
-                    b.getWorld().playEffect(b.getLocation(), Effect.STEP_SOUND, Material.GRASS);
+                    b.getWorld().playEffect(b.getLocation(), Effect.STEP_SOUND, ExoticGarden.grass);
                 }
             }
         };
